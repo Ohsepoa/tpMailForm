@@ -158,7 +158,7 @@ Mailform.FormBuilder.ContextMenu.FieldOption = Mailform.FormBuilder.ContextMenu.
 			url: location.pathname + '?' + queryString,
 			data: data,
 			success: function(data){ self._ajaxValidationSuccess(data); },
-			error: function(data){ self._ajaxError(data); },
+			error: function(xhr, errText, errThrown){ self._ajaxError(xhr, errText, errThrown); },
 			dataType: 'json'
 		});
 	},
@@ -202,8 +202,8 @@ Mailform.FormBuilder.ContextMenu.FieldOption = Mailform.FormBuilder.ContextMenu.
 	 * Ajaxエラー時
 	 * @protected
 	 */
-	_ajaxError: function(data) {
-		this._ajaxFail("Error: Unexpected format returned.");
+	_ajaxError: function(xhr, errText, errThrown) {
+		this._ajaxFail("Error: Unexpected format returned. ( " + errText + " )");
 	}
 });
 })(jQuery);
