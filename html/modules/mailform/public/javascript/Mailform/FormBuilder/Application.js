@@ -1,3 +1,4 @@
+(function($){
 /**
  * @constructor
  */
@@ -189,3 +190,4 @@ Mailform.FormBuilder.Application.prototype = {
 		this.contextMenu.cancel('input, .mailformFieldLabelPreview, .mailformGrabTab *, .mailformFieldRequired, .mailformFieldDescription, .mailformFieldDescription *');
 	}
 };
+})(jQuery);

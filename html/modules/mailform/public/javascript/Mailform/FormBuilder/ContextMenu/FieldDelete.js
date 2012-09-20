@@ -1,3 +1,4 @@
+(function($){
 /**
  * 「フィールドを削除する」メニュー
  */
@@ -43,3 +44,4 @@ Mailform.FormBuilder.ContextMenu.FieldDelete = Mailform.FormBuilder.ContextMenu.
 		}
 	}
 });
+})(jQuery);

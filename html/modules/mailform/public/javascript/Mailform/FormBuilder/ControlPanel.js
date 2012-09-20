@@ -1,3 +1,4 @@
+(function($){
 /**
  * @constructor
  * @param {HTMLDivElement} controlPannel
@@ -103,3 +104,4 @@ Mailform.FormBuilder.ControlPanel.prototype = {
 		this.save();
 	}
 };
+})(jQuery);

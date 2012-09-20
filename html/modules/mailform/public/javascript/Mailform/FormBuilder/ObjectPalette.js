@@ -1,3 +1,4 @@
+(function($){
 /**
  * @constructor
  * @param {HTMLDivElement} objectPalette 
@@ -177,3 +178,4 @@ Mailform.FormBuilder.ObjectPalette.prototype = {
 		});
 	}
 };
+})(jQuery);

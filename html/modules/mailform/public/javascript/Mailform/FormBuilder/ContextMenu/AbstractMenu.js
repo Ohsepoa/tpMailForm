@@ -1,3 +1,4 @@
+(function($){
 /**
  * コンテクストメニューのメニュー項目
  * @abstract
@@ -94,3 +95,4 @@ Mailform.FormBuilder.ContextMenu.AbstractMenu = Mailform.Class.extend({
 		$(this.dom).hide();
 	}
 });
+})(jQuery);

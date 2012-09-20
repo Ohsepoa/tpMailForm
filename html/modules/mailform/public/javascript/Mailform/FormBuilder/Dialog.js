@@ -1,3 +1,4 @@
+(function($){
 Mailform.FormBuilder.Dialog = Mailform.Class.extend({
 
 	/**
@@ -211,3 +212,4 @@ Mailform.FormBuilder.Dialog = Mailform.Class.extend({
 		this.scrollFiexed = false;
 	}
 });
+})(jQuery);

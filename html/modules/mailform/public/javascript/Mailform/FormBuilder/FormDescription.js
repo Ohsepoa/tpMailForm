@@ -1,3 +1,4 @@
+(function($){
 /**
  * @constructor
  */
@@ -92,3 +93,4 @@ Mailform.FormBuilder.FormDescription.prototype = {
 		app.editorPanel.hide();
 	}
 };
+})(jQuery);

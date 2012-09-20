@@ -1,3 +1,4 @@
+(function($){
 /**
  * @constructor
  * @param {HTMLDivElement} contextMenu
@@ -335,3 +336,4 @@ Mailform.FormBuilder.ContextMenu.prototype = {
 		row.lowdark();
 	}
 };
+})(jQuery);

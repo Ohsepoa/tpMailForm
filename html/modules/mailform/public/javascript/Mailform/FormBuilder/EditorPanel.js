@@ -1,3 +1,4 @@
+(function($){
 /**
  * @constructor
  */
@@ -78,3 +79,4 @@ Mailform.FormBuilder.EditorPanel.prototype = {
 		});
 	}
 };
+})(jQuery);

@@ -1,3 +1,4 @@
+(function($){
 /**
  * @constructor
  * @param {HTMLTableRowElement} row
@@ -497,3 +498,4 @@ Mailform.FormBuilder.TableRow.prototype = {
 		app.editorPanel.hide();
 	}
 };
+})(jQuery);

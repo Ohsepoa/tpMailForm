@@ -1,3 +1,4 @@
+(function($){
 /**
  * 「行を削除する」メニュー
  */
@@ -43,3 +44,4 @@ Mailform.FormBuilder.ContextMenu.RowRemove = Mailform.FormBuilder.ContextMenu.Ab
 		}
 	}
 });
+})(jQuery);

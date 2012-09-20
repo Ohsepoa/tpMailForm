@@ -1,3 +1,4 @@
+(function($){
 /**
  * 「フィールドオプション」のメニュー
  */
@@ -205,3 +206,4 @@ Mailform.FormBuilder.ContextMenu.FieldOption = Mailform.FormBuilder.ContextMenu.
 		this._ajaxFail("Error: Unexpected format returned.");
 	}
 });
+})(jQuery);

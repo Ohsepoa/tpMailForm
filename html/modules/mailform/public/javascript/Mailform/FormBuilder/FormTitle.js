@@ -1,3 +1,4 @@
+(function($){
 /**
  * @constructor
  */
@@ -77,3 +78,4 @@ Mailform.FormBuilder.FormTitle.prototype = {
 		}
 	}
 };
+})(jQuery);

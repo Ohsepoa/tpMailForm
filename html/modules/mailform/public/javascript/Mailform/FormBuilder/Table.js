@@ -1,3 +1,4 @@
+(function($){
 /**
  * @constructor
  * @param {HTMLTableElement} table
@@ -227,3 +228,4 @@ Mailform.FormBuilder.Table.prototype = {
 		});
 	}
 };
+})(jQuery);
