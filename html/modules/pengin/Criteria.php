@@ -103,6 +103,12 @@ class Pengin_Criteria
 
 	public function render()
 	{
+		static $link = null;
+		if (is_null($link)) {
+			$db = XoopsDatabaseFactory::getDatabaseConnection();
+			$link = (is_object($db->conn) && get_class($db->conn) === 'mysqli')? $db->conn : false;
+		}
+		
 		$conditions = array();
 		$likes = array('^=', '$=', '*=');
 
@@ -143,7 +149,7 @@ class Pengin_Criteria
 				foreach ( $value as $k => $v )
 				{
 					
-					$value[$k] = mysql_real_escape_string($value[$k]);
+					$value[$k] = $link? mysqli_real_escape_string($link ,$value[$k]) : mysql_real_escape_string($value[$k]);
 					$value[$k] = $prefix.$value[$k].$postfix;
 				}
 
@@ -152,7 +158,7 @@ class Pengin_Criteria
 			}
 			else
 			{
-				$value = mysql_real_escape_string($value);
+				$value = $link? mysqli_real_escape_string($link ,$value) : mysql_real_escape_string($value);
 				$value = $prefix.$value.$postfix;
 			}
 

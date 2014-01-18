@@ -152,6 +152,12 @@ abstract class Pengin_Model_AbstractModel
 
 	public function getVarSqlEscaped($name)
 	{
+		static $link = null;
+		if (is_null($link)) {
+			$db = XoopsDatabaseFactory::getDatabaseConnection();
+			$link = (is_object($db->conn) && get_class($db->conn) === 'mysqli')? $db->conn : false;
+		}
+
 		$type  = $this->vars[$name]['type'];
 		$value = $this->vars[$name]['value'];
 
@@ -174,11 +180,11 @@ abstract class Pengin_Model_AbstractModel
 		}
 		elseif ( self::STRING == $type )
 		{
-			return mysql_real_escape_string($value); // todo : size check
+			return $link? mysqli_real_escape_string($link, $value) : mysql_real_escape_string($value); // todo : size check
 		}
 		elseif ( self::TEXT == $type )
 		{
-			return mysql_real_escape_string($value);
+			return $link? mysqli_real_escape_string($link, $value) : mysql_real_escape_string($value);
 		}
 		elseif ( self::DATETIME == $type )
 		{
