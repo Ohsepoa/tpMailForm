@@ -249,11 +249,13 @@ class Pengin_View_Smarty
 	  // Replace Legacy System Template name to Legacy Module Template name
 	  static $patterns = null;
 	  static $replacements = null;
+	  static $func_quote = null;
 	  if (!$patterns) {
+	  	$func_quote = create_function('$m', 'return "/".preg_quote($m[1],"/")."/";');
 	    $root =& XCube_Root::getSingleton();
 	    $systemTemplates = explode(',', $root->getSiteConfig('Legacy_RenderSystem', 'SystemTemplate',''));
 	    $prefix = $root->getSiteConfig('Legacy_RenderSystem', 'SystemTemplatePrefix', 'legacy');
-	    $patterns = preg_replace('/^\s*([^\s]*)\s*$/e', '"/".preg_quote("\1","/")."/"', $systemTemplates);
+	    $patterns = preg_replace_callback('/^\s*([^\s]*)\s*$/', $func_quote, $systemTemplates);
 	    $replacements = preg_replace('/^\s*system_([^\s]*)\s*/', $prefix.'_\1', $systemTemplates);
 	  }
 	  if ($patterns) {
