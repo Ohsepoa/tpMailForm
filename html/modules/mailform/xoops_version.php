@@ -3,7 +3,7 @@ $dirname  = dirname(__FILE__);
 $basename = basename($dirname);
 
 $modversion['name']        = "Mailform";
-$modversion['version']     = 2.02;
+$modversion['version']     = 2.03;
 $modversion['description'] = "";
 $modversion['credits']     = 'RYUS Inc.';
 $modversion['author']      = 'Hidehito NOZAWA aka Suin <http://ryus.co.jp/>';
