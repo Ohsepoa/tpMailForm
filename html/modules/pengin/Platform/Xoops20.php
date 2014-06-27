@@ -257,6 +257,9 @@ class Pengin_Platform_Xoops20 extends Pengin_Platform_Abstract
 
 		$memberHandler =& xoops_gethandler('member');
 		$userObject    =& $memberHandler->getUser($uid);
+    if (is_object($userObject) === false) {
+        return "";
+    }
 		$userName      = $userObject->getVar('uname');
 
 		return $userName;
