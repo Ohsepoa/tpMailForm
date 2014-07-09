@@ -257,9 +257,15 @@ class Pengin_Platform_Xoops20 extends Pengin_Platform_Abstract
 
 		$memberHandler =& xoops_gethandler('member');
 		$userObject    =& $memberHandler->getUser($uid);
-		$userName      = $userObject->getVar('uname');
+		if (is_object($userObject)) {
+			$userName = $userObject->getVar('uname');
+		} else {
+			$root = XCube_Root::getSingleton();
+			$userName = $root->mContext->getXoopsConfig('anonymous');
+		}
 
 		return $userName;
+
 	}
 
 	public function getInstaller()
